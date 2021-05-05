@@ -11,7 +11,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Helllo World!" );
+        System.out.println( "Hellllo World!" );
     }
 
     private void foo() throws Exception {
