@@ -1,0 +1,112 @@
+{
+    "version": "2.1.0",
+    "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.4",
+    "runs": [
+        {
+            "tool": {
+                "driver": {
+                    "name": "CodeGuru Reviewer Scanner",
+                    "informationUri": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/how-codeguru-reviewer-works.html",
+                    "rules": [
+                        {
+                            "id": "RuleId",
+                            "name": "RuleName",
+                            "shortDescription": {
+                                "text": "ShortDescription"
+                            },
+                            "fullDescription": {
+                                "text": "LongDescription"
+                            },
+                            "defaultConfiguration": {
+                                "level": "Error"
+                            },
+                            "properties": {
+                                "tags": [
+                                    "x",
+                                    "y",
+                                    "z"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "results": [
+                {
+                    "ruleId": "AWSBestPractices",
+                    "level": "note",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "main/java/com/mycompany/app/App.java"
+                                },
+                                "region": {
+                                    "startLine": 14,
+                                    "endLine": 15
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "Description"
+                    },
+                    "codeFlows": [
+                        {
+                            "threadFlows": [
+                                {
+                                    "message": {
+                                        "text": "CLComment"
+                                    },
+                                    "location": {
+                                        "physicalLocation": {
+                                            "region": {
+                                                "startLine": 24,
+                                                "endLine": 25
+                                            },
+                                            "artifactLocation": {
+                                                "uri": "main/java/com/mycompany/app/Server.java"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "message": {
+                                        "text": "CLComment2"
+                                    },
+                                    "location": {
+                                        "physicalLocation": {
+                                            "region": {
+                                                "startLine": 17,
+                                                "endLine": 20
+                                            },
+                                            "artifactLocation": {
+                                                "uri": "main/java/com/mycompany/app/Server2.java"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "message": {
+                                        "text": "C2LComment"
+                                    },
+                                    "location": {
+                                        "physicalLocation": {
+                                            "region": {
+                                                "startLine": "L2ineNumber",
+                                                "endLine": "E2ndlineNumber"
+                                            },
+                                            "artifactLocation": {
+                                                "uri": "C2FFP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
