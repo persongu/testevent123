@@ -4,6 +4,7 @@ name: "Upload SARIF"
 # The scheduled workflow runs every Thursday at 15:45 UTC.
 on:
   push:
+  pull_request:
 
 jobs:
   build:
