@@ -66,27 +66,27 @@ jobs:
       run: docker pull 547919350166.dkr.ecr.us-west-2.amazonaws.com/codegurureviewer-actions:latest
 
 
-#     # Extra step requied for private beta .. 
-#     - name: Checkout the action from a private repository
-#       uses: actions/checkout@v2
-#       if: ${{ always() }}
-#       with:
-#         repository: persongu/CICDSarifTesting
-#         ref: refs/heads/main
-#         token: ${{ secrets.TOKEN }}
-#         path: ./.github/persongu/CICDSarifTesting
+    # Extra step requied for private beta .. 
+    - name: Checkout the action from a private repository
+      uses: actions/checkout@v2
+      if: ${{ always() }}
+      with:
+        repository: persongu/CICDSarifTesting
+        ref: refs/heads/main
+        token: ${{ secrets.TOKEN }}
+        path: ./.github/persongu/CICDSarifTesting
 
-#     - name: AWS CodeGuru Reviewer
-#       uses: ./.github/persongu/CICDSarifTesting
-#       if: ${{ always() }}
-#       with:          
-#         source_path: . # Java source code root
-#         build_path: target # build artifact(s) directory
-#         s3_bucket: codeguru-reviewer-cicd-rulemetadata-1
+    - name: AWS CodeGuru Reviewer
+      uses: ./.github/persongu/CICDSarifTesting
+      if: ${{ always() }}
+      with:          
+        source_path: . # Java source code root
+        build_path: target # build artifact(s) directory
+        s3_bucket: codeguru-reviewer-cicd-rulemetadata-1
         
 
-#     - name: Upload review result
-#       if: ${{ always() }}
-#       uses: github/codeql-action/upload-sarif@v1
-#       with:
-#         sarif_file: codeguru-results.sarif.json
+    - name: Upload review result
+      if: ${{ always() }}
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: codeguru-results.sarif.json
