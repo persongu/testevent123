@@ -82,7 +82,7 @@ jobs:
       with:          
         source_path: . # Java source code root
         build_path: target # build artifact(s) directory
-        s3_bucket: codeguru-reviewer-cicd-rulemetadata-1
+        s3_bucket: codeguru-reviewer-9a775d30-bdc8-4de7-b44f-ceda5b074b281
         
 
     - name: Upload review result
