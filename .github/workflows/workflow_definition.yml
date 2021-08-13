@@ -44,14 +44,14 @@ jobs:
 #       run: mvn -B package --file pom.xml
 
 #     # Extra step requied for private beta .. 
-#     - name: Checkout the action from a private repository
-#       uses: actions/checkout@v2
-#       if: ${{ always() }}
-#       with:
-#         repository: persongu/CICDSarifTesting
-#         ref: refs/heads/main
-#         token: ${{ secrets.TOKEN }}
-#         path: ./.github/persongu/CICDSarifTesting
+    - name: Checkout the action from a private repository
+      uses: actions/checkout@v2
+      if: ${{ always() }}
+      with:
+        repository: persongu/CICDSarifTesting
+        ref: refs/heads/main
+        token: ${{ secrets.TOKEN }}
+        path: ./.github/persongu/CICDSarifTesting
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       if: ${{ always() }}
@@ -61,17 +61,17 @@ jobs:
         # aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }} # if you have/need it
         aws-region: us-west-2
 
-#     - name: AWS CodeGuru Reviewer
-#       uses: ./.github/persongu/CICDSarifTesting
-#       if: ${{ always() }}
-#       with:          
-#         source_path: . # Java source code root
-#         build_path: target # build artifact(s) directory
-#         s3_bucket: codeguru-reviewer-cicd-rulemetadata
+    - name: AWS CodeGuru Reviewer
+      uses: ./.github/persongu/CICDSarifTesting
+      if: ${{ always() }}
+      with:          
+        source_path: . # Java source code root
+        build_path: target # build artifact(s) directory
+        s3_bucket: codeguru-reviewer-cicd-rulemetadata
         
 
-#     - name: Upload review result
-#       if: ${{ always() }}
-#       uses: github/codeql-action/upload-sarif@v1
-#       with:
-#         sarif_file: codeguru-results.sarif.json
+    - name: Upload review result
+      if: ${{ always() }}
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        sarif_file: codeguru-results.sarif.json
