@@ -23,13 +23,13 @@ on:
 jobs:
   build:
   
-#     runs-on: ubuntu-latest
-    runs-on: self-hosted
-    container:
-       image: 547919350166.dkr.ecr.us-west-2.amazonaws.com/codegurureviewer-actions:latest
-       credentials:
-         username: AWS
-         password: ${{ secrets.ECR_PASSWORD }}       
+    runs-on: ubuntu-latest
+#     runs-on: self-hosted
+#     container:
+#        image: 547919350166.dkr.ecr.us-west-2.amazonaws.com/codegurureviewer-actions:latest
+#        credentials:
+#          username: AWS
+#          password: ${{ secrets.ECR_PASSWORD }}       
          
     steps:
     - uses: actions/checkout@v2
