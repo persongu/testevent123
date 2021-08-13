@@ -22,9 +22,15 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
+  
+#     runs-on: ubuntu-latest
+    runs-on: self-hosted
+    container:
+       image: 547919350166.dkr.ecr.us-west-2.amazonaws.com/codegurureviewer-actions:latest
+       credentials:
+         username: AWS
+         password: ${{ secrets.ECR_PASSWORD }}       
+         
     steps:
     - uses: actions/checkout@v2
       with:
@@ -42,6 +48,23 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      if: ${{ always() }}
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }} # if you have/need it
+        aws-region: us-west-2
+
+      
+    - name: ECR login
+      uses: aws-actions/amazon-ecr-login@v1
+    
+    - name: ECR login
+      run: docker pull 547919350166.dkr.ecr.us-west-2.amazonaws.com/codegurureviewer-actions:latest
+
 
 #     # Extra step requied for private beta .. 
     - name: Checkout the action from a private repository
@@ -52,14 +75,6 @@ jobs:
         ref: refs/heads/main
         token: ${{ secrets.TOKEN }}
         path: ./.github/persongu/CICDSarifTesting
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      if: ${{ always() }}
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }} # if you have/need it
-        aws-region: us-west-2
 
     - name: AWS CodeGuru Reviewer
       uses: ./.github/persongu/CICDSarifTesting
