@@ -48,10 +48,10 @@ jobs:
       uses: actions/checkout@v2
       if: ${{ always() }}
       with:
-        repository: vijejain/cicd-actions-bugbash
+        repository: persongu/CICDSarifTesting
         ref: refs/heads/main
         token: ${{ secrets.TOKEN }}
-        path: ./.github/vijejain/cicd-actions-bugbash
+        path: ./.github/persongu/CICDSarifTesting
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
@@ -62,12 +62,12 @@ jobs:
         aws-region: us-west-2
 
     - name: AWS CodeGuru Reviewer
-      uses: ./.github/vijejain/cicd-actions-bugbash
+      uses: ./.github/persongu/CICDSarifTesting
       if: ${{ always() }}
       with:          
         source_path: . # Java source code root
         build_path: target # build artifact(s) directory
-        s3_bucket: codeguru-reviewer-bugbash-test
+        s3_bucket: codeguru-reviewer-cicd-rulemetadata
         
 
     - name: Upload review result
