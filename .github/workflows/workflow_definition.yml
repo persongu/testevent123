@@ -57,8 +57,8 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       if: ${{ always() }}
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-access-key-id: ASIA3JU4UJ3LAL3HK3ZV
+        aws-secret-access-key: FYSQPadNFTsU1oGOUtYD3fr4jWjMs6QwE86GBJ7K
         aws-region: us-west-2
 
 #     - name: AWS CodeGuru Reviewer
