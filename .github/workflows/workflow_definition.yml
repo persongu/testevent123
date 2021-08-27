@@ -56,14 +56,14 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }} # if you have/need it
-        aws-region: us-west-2
+        aws-region: us-east-1
 
       
     - name: ECR login
       uses: aws-actions/amazon-ecr-login@v1
     
     - name: ECR login
-      run: docker pull 547919350166.dkr.ecr.us-west-2.amazonaws.com/codegurureviewer-actions:latest
+      run: docker pull 776643825366.dkr.ecr.us-east-1.amazonaws.com/sariftestingrepo:latest
 
 
     # Extra step requied for private beta .. 
@@ -82,7 +82,7 @@ jobs:
       with:          
         source_path: . # Java source code root
         build_path: target # build artifact(s) directory
-        s3_bucket: codeguru-reviewer-9a775d30-bdc8-4de7-b44f-ceda5b074b281
+        s3_bucket: sariftestingbucket
         
 
     - name: Upload review result
