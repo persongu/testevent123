@@ -82,7 +82,7 @@ jobs:
       with:          
         source_path: . # Java source code root
         build_path: target # build artifact(s) directory
-        s3_bucket: sariftestingbucket
+        s3_bucket: codeguru-reviewer-123456
         
 
     - name: Upload review result
