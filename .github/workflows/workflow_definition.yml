@@ -75,6 +75,7 @@ jobs:
         ref: refs/heads/main
         token: ${{ secrets.TOKEN }}
         path: ./.github/persongu/CICDSarifTesting
+        
 
     - name: AWS CodeGuru Reviewer
       uses: ./.github/persongu/CICDSarifTesting
@@ -82,7 +83,7 @@ jobs:
       with:          
         source_path: . # Java source code root
         build_path: target # build artifact(s) directory
-        s3_bucket: codeguru-reviewer-123456. #name of s3 bucket to be used
+        s3_bucket: codeguru-reviewer-9876543. #name of s3 bucket to be used
         
 
     - name: Upload review result
