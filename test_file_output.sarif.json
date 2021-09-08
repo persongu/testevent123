@@ -1,112 +1,110 @@
 {
-    "version": "2.1.0",
-    "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.4",
-    "runs": [
+    "NextToken": null,
+    "RecommendationSummaries": [
         {
-            "tool": {
-                "driver": {
-                    "name": "CodeGuru Reviewer Scanner",
-                    "informationUri": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/how-codeguru-reviewer-works.html",
-                    "rules": [
-                        {
-                            "id": "RuleId",
-                            "name": "RuleName",
-                            "shortDescription": {
-                                "text": "ShortDescription"
-                            },
-                            "fullDescription": {
-                                "text": "LongDescription"
-                            },
-                            "defaultConfiguration": {
-                                "level": "Error"
-                            },
-                            "properties": {
-                                "tags": [
-                                    "x",
-                                    "y",
-                                    "z"
-                                ]
-                            }
-                        }
-                    ]
-                }
+            "Description": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 26 \n\n    * src/main/java/com/mycompany/app/App.java, line: 26 (The constant value)\n\n",
+            "EndLine": 26,
+            "FilePath": "src/main/java/com/mycompany/app/App.java",
+            "RecommendationCategory": "SecurityIssues",
+            "RecommendationId": "security-38bbecdfe60da3d06bad543f4731374c061b33a9f3e132dfc6aab62",
+            "RecommenderId": "guru:v1:dragonglass:security:cryptocompliancecipher:1.0",
+            "RuleMetadata": {
+                "LongDescription": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes.",
+                "RuleId": "java/insecure-cryptography@v1.0",
+                "RuleName": "Insecure cryptography",
+                "RuleTags": [
+                    "cryptography",
+                    "security",
+                    "digital-signature",
+                    "cwe-327"
+                ],
+                "ShortDescription": "Weak, broken, or misconfigured cryptography can lead to security vulnerabilities."
             },
-            "results": [
-                {
-                    "ruleId": "AWSBestPractices",
-                    "level": "note",
-                    "locations": [
-                        {
-                            "physicalLocation": {
-                                "artifactLocation": {
-                                    "uri": "main/java/com/mycompany/app/App.java"
-                                },
-                                "region": {
-                                    "startLine": 14,
-                                    "endLine": 15
-                                }
-                            }
-                        }
-                    ],
-                    "message": {
-                        "text": "Description"
-                    },
-                    "codeFlows": [
-                        {
-                            "threadFlows": [
-                                {
-                                    "message": {
-                                        "text": "CLComment"
-                                    },
-                                    "location": {
-                                        "physicalLocation": {
-                                            "region": {
-                                                "startLine": 24,
-                                                "endLine": 25
-                                            },
-                                            "artifactLocation": {
-                                                "uri": "main/java/com/mycompany/app/Server.java"
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "message": {
-                                        "text": "CLComment2"
-                                    },
-                                    "location": {
-                                        "physicalLocation": {
-                                            "region": {
-                                                "startLine": 17,
-                                                "endLine": 20
-                                            },
-                                            "artifactLocation": {
-                                                "uri": "main/java/com/mycompany/app/Server2.java"
-                                            }
-                                        }
-                                    }
-                                },
-                                {
-                                    "message": {
-                                        "text": "C2LComment"
-                                    },
-                                    "location": {
-                                        "physicalLocation": {
-                                            "region": {
-                                                "startLine": "L2ineNumber",
-                                                "endLine": "E2ndlineNumber"
-                                            },
-                                            "artifactLocation": {
-                                                "uri": "C2FFP"
-                                            }
-                                        }
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "Severity": "Critical",
+            "StartLine": 26
+        },
+        {
+            "Description": "New security detectors are periodically added, so consider regular security-analysis to keep your code secure.",
+            "EndLine": 1,
+            "FilePath": ".",
+            "RecommendationCategory": "CodeMaintenanceIssues",
+            "RecommendationId": "security-88ca7c004c652ac48bc9b0e303d6ad1d14dc5767afb65bc5e227d16",
+            "RecommenderId": "CodeMetadata",
+            "RuleMetadata": {
+                "LongDescription": null,
+                "RuleId": null,
+                "RuleName": null,
+                "RuleTags": null,
+                "ShortDescription": null
+            },
+            "Severity": null,
+            "StartLine": 1
+        },
+        {
+            "Description": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 20 \n\n    * src/main/java/com/mycompany/app/App.java, line: 20 (The constant value)\n\n",
+            "EndLine": 20,
+            "FilePath": "src/main/java/com/mycompany/app/App.java",
+            "RecommendationCategory": "SecurityIssues",
+            "RecommendationId": "security-95c0b7d564cb0e605156cc6291472e58ac050ebb52d81b5d34635e5",
+            "RecommenderId": "guru:v1:dragonglass:security:cryptocompliancecipher:1.0",
+            "RuleMetadata": {
+                "LongDescription": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes.",
+                "RuleId": "java/insecure-cryptography@v1.0",
+                "RuleName": "Insecure cryptography",
+                "RuleTags": [
+                    "cryptography",
+                    "security",
+                    "digital-signature",
+                    "cwe-327"
+                ],
+                "ShortDescription": "Weak, broken, or misconfigured cryptography can lead to security vulnerabilities."
+            },
+            "Severity": "Critical",
+            "StartLine": 20
+        },
+        {
+            "Description": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 25 \n\n    * src/main/java/com/mycompany/app/App.java, line: 18 (The constant value)\n\n",
+            "EndLine": 25,
+            "FilePath": "src/main/java/com/mycompany/app/App.java",
+            "RecommendationCategory": "SecurityIssues",
+            "RecommendationId": "security-baf21864be839fa7032b2fd96a0ad84ac19b09c762e3a23c331a00f",
+            "RecommenderId": "guru:v1:dragonglass:security:cryptocompliancecipher:1.0",
+            "RuleMetadata": {
+                "LongDescription": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes.",
+                "RuleId": "java/insecure-cryptography@v1.0",
+                "RuleName": "Insecure cryptography",
+                "RuleTags": [
+                    "cryptography",
+                    "security",
+                    "digital-signature",
+                    "cwe-327"
+                ],
+                "ShortDescription": "Weak, broken, or misconfigured cryptography can lead to security vulnerabilities."
+            },
+            "Severity": "Critical",
+            "StartLine": 25
+        },
+        {
+            "Description": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 19 \n\n    * src/main/java/com/mycompany/app/App.java, line: 19 (The constant value)\n\n",
+            "EndLine": 19,
+            "FilePath": "src/main/java/com/mycompany/app/App.java",
+            "RecommendationCategory": "SecurityIssues",
+            "RecommendationId": "security-deb4f92be7b965d6ece611c786629266ac6ef8d6ca10b9274fc8d0e",
+            "RecommenderId": "guru:v1:dragonglass:security:cryptocompliancecipher:1.0",
+            "RuleMetadata": {
+                "LongDescription": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes.",
+                "RuleId": "java/insecure-cryptography@v1.0",
+                "RuleName": "Insecure cryptography",
+                "RuleTags": [
+                    "cryptography",
+                    "security",
+                    "digital-signature",
+                    "cwe-327"
+                ],
+                "ShortDescription": "Weak, broken, or misconfigured cryptography can lead to security vulnerabilities."
+            },
+            "Severity": "Critical",
+            "StartLine": 19
         }
     ]
 }
