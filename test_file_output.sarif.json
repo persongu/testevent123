@@ -1,110 +1,243 @@
 {
-    "NextToken": null,
-    "RecommendationSummaries": [
+    "version": "2.1.0",
+    "$schema": "http://json.schemastore.org/sarif-2.1.0-rtm.4",
+    "runs": [
         {
-            "Description": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 26 \n\n    * src/main/java/com/mycompany/app/App.java, line: 26 (The constant value)\n\n",
-            "EndLine": 26,
-            "FilePath": "src/main/java/com/mycompany/app/App.java",
-            "RecommendationCategory": "SecurityIssues",
-            "RecommendationId": "security-38bbecdfe60da3d06bad543f4731374c061b33a9f3e132dfc6aab62",
-            "RecommenderId": "guru:v1:dragonglass:security:cryptocompliancecipher:1.0",
-            "RuleMetadata": {
-                "LongDescription": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes.",
-                "RuleId": "java/insecure-cryptography@v1.0",
-                "RuleName": "Insecure cryptography",
-                "RuleTags": [
-                    "cryptography",
-                    "security",
-                    "digital-signature",
-                    "cwe-327"
-                ],
-                "ShortDescription": "Weak, broken, or misconfigured cryptography can lead to security vulnerabilities."
+            "tool": {
+                "driver": {
+                    "name": "CodeGuru Reviewer Scanner",
+                    "informationUri": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/how-codeguru-reviewer-works.html",
+                    "rules": [
+                        {
+                            "id": "java/insecure-cryptography@v1.0",
+                            "name": "Insecure cryptography",
+                            "shortDescription": {
+                                "text": "Insecure cryptography"
+                            },
+                            "fullDescription": {
+                                "text": "Weak, broken, or misconfigured cryptography can lead to security vulnerabilities."
+                            },
+                            "help": {
+                                "text": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes."
+                            },
+                            "properties": {
+                                "tags": [
+                                    "cryptography",
+                                    "security",
+                                    "digital-signature",
+                                    "cwe-327"
+                                ],
+                                "security-severity": 9
+                            },
+                            "defaultConfiguration": {
+                                "level": "error"
+                            }
+                        },
+                        {
+                            "id": "AWS Best Practices",
+                            "name": "AWS Best Practices",
+                            "shortDescription": {
+                                "text": "AWS Best Practices",
+                                "markdown": "AWS Best Practices"
+                            },
+                            "help": {
+                                "text": "AWS best practices are rules that help you improve your code quality by identifying areas where your code doesn\u2019t follow a best practice of an AWS API.",
+                                "markdown": "AWS best practices are rules that help you improve your code quality by identifying areas where your code doesn\u2019t follow a best practice of an AWS API."
+                            }
+                        },
+                        {
+                            "id": "AWS CloudFormation Issues",
+                            "name": "AWS CloudFormation Issues",
+                            "shortDescription": {
+                                "text": "AWS CloudFormation Issues",
+                                "markdown": "AWS CloudFormation Issues"
+                            },
+                            "help": {
+                                "text": "CloudFormation rules help you improve the code quality of your CloudFormation templates.",
+                                "markdown": "CloudFormation rules help you improve the code quality of your CloudFormation templates."
+                            }
+                        },
+                        {
+                            "id": "Duplicate Code",
+                            "name": "Duplicate Code",
+                            "shortDescription": {
+                                "text": "Duplicate Code",
+                                "markdown": "Duplicate Code"
+                            },
+                            "help": {
+                                "text": "Duplicate code is a rule type that helps you improve your code quality by detecting duplicated code that could be consolidated for better code maintainability.",
+                                "markdown": "Duplicate code is a rule type that helps you improve your code quality by detecting duplicated code that could be consolidated for better code maintainability."
+                            }
+                        },
+                        {
+                            "id": "Code Maintenance Issues",
+                            "name": "Code Maintenance Issues",
+                            "shortDescription": {
+                                "text": "Code Maintenance Issues",
+                                "markdown": "Code Maintenance Issues"
+                            },
+                            "help": {
+                                "text": "Code maintenance rules are meant to improve your code quality by detecting code complexities or any characteristic in your source code that makes the code difficult to maintain over time.",
+                                "markdown": "Code maintenance rules are meant to improve your code quality by detecting code complexities or any characteristic in your source code that makes the code difficult to maintain over time."
+                            }
+                        },
+                        {
+                            "id": "Concurrency Issues",
+                            "name": "Concurrency Issues",
+                            "shortDescription": {
+                                "text": "Concurrency Issues",
+                                "markdown": "Concurrency Issues"
+                            },
+                            "help": {
+                                "text": "Concurrency rules help you improve your code quality by detecting missing synchronization resulting in incorrect functionality or excessive synchronization leading to performance issues.",
+                                "markdown": "Concurrency rules help you improve your code quality by detecting missing synchronization resulting in incorrect functionality or excessive synchronization leading to performance issues."
+                            }
+                        },
+                        {
+                            "id": "Input Validations",
+                            "name": "Input Validations",
+                            "shortDescription": {
+                                "text": "Input Validations",
+                                "markdown": "Input Validations"
+                            },
+                            "help": {
+                                "text": "Input validations is a rule type that helps you improve the security of your code by identifying areas where malformed data might be entering your database and triggering malfunctions of downstream components.",
+                                "markdown": "Input validations is a rule type that helps you improve the security of your code by identifying areas where malformed data might be entering your database and triggering malfunctions of downstream components."
+                            }
+                        },
+                        {
+                            "id": "Python Best Practices",
+                            "name": "Python Best Practices",
+                            "shortDescription": {
+                                "text": "Python Best Practices",
+                                "markdown": "Python Best Practices"
+                            },
+                            "help": {
+                                "text": "Python best practices are rules that help you improve your code quality by identifying areas where your code doesn't follow a best practice of the language or one of its libraries.",
+                                "markdown": "Python best practices are rules that help you improve your code quality by identifying areas where your code doesn't follow a best practice of the language or one of its libraries."
+                            }
+                        },
+                        {
+                            "id": "Java Best Practices",
+                            "name": "Java Best Practices",
+                            "shortDescription": {
+                                "text": "Java Best Practices",
+                                "markdown": "Java Best Practices"
+                            },
+                            "help": {
+                                "text": "Java best practices are rules that help you improve your code quality by identifying areas where your code doesn't follow a best practice set by the language or one of its libraries.",
+                                "markdown": "Java best practices are rules that help you improve your code quality by identifying areas where your code doesn't follow a best practice set by the language or one of its libraries."
+                            }
+                        },
+                        {
+                            "id": "Resource Leaks",
+                            "name": "Resource Leaks",
+                            "shortDescription": {
+                                "text": "Resource Leaks",
+                                "markdown": "Resource Leaks"
+                            },
+                            "help": {
+                                "text": "Resource leaks is a rule type that helps you improve the security of your code by identifying leaks in resource objects.",
+                                "markdown": "Resource leaks is a rule type that helps you improve the security of your code by identifying leaks in resource objects."
+                            }
+                        },
+                        {
+                            "id": "Security Issues",
+                            "name": "Security Issues",
+                            "shortDescription": {
+                                "text": "Security Issues",
+                                "markdown": "Security Issues"
+                            },
+                            "help": {
+                                "text": "Security rules help you improve the security of your code by identifying risks from the top ten Open Web Application Security Project (OWASP) categories, security best practices for AWS APIs, and common Java crypto libraries. OWASP is a standard awareness document for developers and web application security.",
+                                "markdown": "Security rules help you improve the security of your code by identifying risks from the top ten Open Web Application Security Project (OWASP) categories, security best practices for AWS APIs, and common Java crypto libraries. OWASP is a standard awareness document for developers and web application security."
+                            }
+                        }
+                    ]
+                }
             },
-            "Severity": "Critical",
-            "StartLine": 26
-        },
-        {
-            "Description": "New security detectors are periodically added, so consider regular security-analysis to keep your code secure.",
-            "EndLine": 1,
-            "FilePath": ".",
-            "RecommendationCategory": "CodeMaintenanceIssues",
-            "RecommendationId": "security-88ca7c004c652ac48bc9b0e303d6ad1d14dc5767afb65bc5e227d16",
-            "RecommenderId": "CodeMetadata",
-            "RuleMetadata": {
-                "LongDescription": null,
-                "RuleId": null,
-                "RuleName": null,
-                "RuleTags": null,
-                "ShortDescription": null
-            },
-            "Severity": null,
-            "StartLine": 1
-        },
-        {
-            "Description": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 20 \n\n    * src/main/java/com/mycompany/app/App.java, line: 20 (The constant value)\n\n",
-            "EndLine": 20,
-            "FilePath": "src/main/java/com/mycompany/app/App.java",
-            "RecommendationCategory": "SecurityIssues",
-            "RecommendationId": "security-95c0b7d564cb0e605156cc6291472e58ac050ebb52d81b5d34635e5",
-            "RecommenderId": "guru:v1:dragonglass:security:cryptocompliancecipher:1.0",
-            "RuleMetadata": {
-                "LongDescription": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes.",
-                "RuleId": "java/insecure-cryptography@v1.0",
-                "RuleName": "Insecure cryptography",
-                "RuleTags": [
-                    "cryptography",
-                    "security",
-                    "digital-signature",
-                    "cwe-327"
-                ],
-                "ShortDescription": "Weak, broken, or misconfigured cryptography can lead to security vulnerabilities."
-            },
-            "Severity": "Critical",
-            "StartLine": 20
-        },
-        {
-            "Description": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 25 \n\n    * src/main/java/com/mycompany/app/App.java, line: 18 (The constant value)\n\n",
-            "EndLine": 25,
-            "FilePath": "src/main/java/com/mycompany/app/App.java",
-            "RecommendationCategory": "SecurityIssues",
-            "RecommendationId": "security-baf21864be839fa7032b2fd96a0ad84ac19b09c762e3a23c331a00f",
-            "RecommenderId": "guru:v1:dragonglass:security:cryptocompliancecipher:1.0",
-            "RuleMetadata": {
-                "LongDescription": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes.",
-                "RuleId": "java/insecure-cryptography@v1.0",
-                "RuleName": "Insecure cryptography",
-                "RuleTags": [
-                    "cryptography",
-                    "security",
-                    "digital-signature",
-                    "cwe-327"
-                ],
-                "ShortDescription": "Weak, broken, or misconfigured cryptography can lead to security vulnerabilities."
-            },
-            "Severity": "Critical",
-            "StartLine": 25
-        },
-        {
-            "Description": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 19 \n\n    * src/main/java/com/mycompany/app/App.java, line: 19 (The constant value)\n\n",
-            "EndLine": 19,
-            "FilePath": "src/main/java/com/mycompany/app/App.java",
-            "RecommendationCategory": "SecurityIssues",
-            "RecommendationId": "security-deb4f92be7b965d6ece611c786629266ac6ef8d6ca10b9274fc8d0e",
-            "RecommenderId": "guru:v1:dragonglass:security:cryptocompliancecipher:1.0",
-            "RuleMetadata": {
-                "LongDescription": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes.",
-                "RuleId": "java/insecure-cryptography@v1.0",
-                "RuleName": "Insecure cryptography",
-                "RuleTags": [
-                    "cryptography",
-                    "security",
-                    "digital-signature",
-                    "cwe-327"
-                ],
-                "ShortDescription": "Weak, broken, or misconfigured cryptography can lead to security vulnerabilities."
-            },
-            "Severity": "Critical",
-            "StartLine": 19
+            "results": [
+                {
+                    "ruleId": "java/insecure-cryptography@v1.0",
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "src/main/java/com/mycompany/app/App.java"
+                                },
+                                "region": {
+                                    "startLine": 26,
+                                    "endLine": 26
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 26 \n\n    * src/main/java/com/mycompany/app/App.java, line: 26 (The constant value)\n\n"
+                    }
+                },
+                {
+                    "ruleId": "java/insecure-cryptography@v1.0",
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "src/main/java/com/mycompany/app/App.java"
+                                },
+                                "region": {
+                                    "startLine": 20,
+                                    "endLine": 20
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 20 \n\n    * src/main/java/com/mycompany/app/App.java, line: 20 (The constant value)\n\n"
+                    }
+                },
+                {
+                    "ruleId": "java/insecure-cryptography@v1.0",
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "src/main/java/com/mycompany/app/App.java"
+                                },
+                                "region": {
+                                    "startLine": 25,
+                                    "endLine": 25
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 25 \n\n    * src/main/java/com/mycompany/app/App.java, line: 18 (The constant value)\n\n"
+                    }
+                },
+                {
+                    "ruleId": "java/insecure-cryptography@v1.0",
+                    "level": "error",
+                    "locations": [
+                        {
+                            "physicalLocation": {
+                                "artifactLocation": {
+                                    "uri": "src/main/java/com/mycompany/app/App.java"
+                                },
+                                "region": {
+                                    "startLine": 19,
+                                    "endLine": 19
+                                }
+                            }
+                        }
+                    ],
+                    "message": {
+                        "text": "It looks like your code uses a cipher object with an insecure transformation. To make your\ncode more secure, use one of the following algorithms with a built-in integrity check:\nAES/GCM/NoPadding, or for Java 11 or newer, ChaCha20-Poly1305. Learn more about [`javax.crypto.Cipher.getInstance`](https://docs.oracle.com/javase/8/docs/api/javax/crypto/Cipher.html#getInstance-java.lang.String-).\n\n\nRelevant Locations:\n\n* src/main/java/com/mycompany/app/App.java, line: 19 \n\n    * src/main/java/com/mycompany/app/App.java, line: 19 (The constant value)\n\n"
+                    }
+                }
+            ]
         }
     ]
 }
