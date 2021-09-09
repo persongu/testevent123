@@ -63,7 +63,8 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
     
     - name: ECR login
-      run: docker pull 776643825366.dkr.ecr.us-east-1.amazonaws.com/sariftestingrepo:latest
+      run: docker pull 547919350166.dkr.ecr.us-east-1.amazonaws.com/batsecrrepo-f70a7b1aceffaf6a2ae140470fc0e94679270825:f955a6cd-cc1b-4efb-a65b-92fef670309d_codegurureviewer-actions_main
+#       run: docker pull 776643825366.dkr.ecr.us-east-1.amazonaws.com/sariftestingrepo:latest
 
 
     # Extra step requied for private beta .. 
