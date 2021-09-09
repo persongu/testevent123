@@ -53,10 +53,10 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       if: ${{ always() }}
       with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }} # if you have/need it
-        aws-region: us-west-2
+        aws-access-key-id: ${{ secrets.ECR_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY }}
+        aws-session-token: ${{ secrets.ECR_AWS_SESSION_TOKEN }} # if you have/need it
+        aws-region: us-east-1
 
       
     - name: ECR login
@@ -77,6 +77,15 @@ jobs:
         token: ${{ secrets.TOKEN }}
         path: ./.github/persongu/CICDSarifTesting
         
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      if: ${{ always() }}
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }} # if you have/need it
+        aws-region: us-east-1
 
     - name: AWS CodeGuru Reviewer
       uses: ./.github/persongu/CICDSarifTesting
