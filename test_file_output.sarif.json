@@ -28,7 +28,7 @@
                                     "cwe-327"
                                 ],
                                 "security-severity": 9
-                            },
+                            }
                         },
                         {
                             "id": "AWS Best Practices",
