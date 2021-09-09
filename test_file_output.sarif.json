@@ -26,11 +26,9 @@
                                     "security",
                                     "digital-signature",
                                     "cwe-327"
-                                ]
+                                ],
+                                "security-severity": 9
                             },
-                            "defaultConfiguration": {
-                                "level": "error"
-                            }
                         },
                         {
                             "id": "AWS Best Practices",
@@ -158,7 +156,6 @@
             "results": [
                 {
                     "ruleId": "java/insecure-cryptography@v1.0",
-                    "level": "error",
                     "locations": [
                         {
                             "physicalLocation": {
@@ -178,7 +175,6 @@
                 },
                 {
                     "ruleId": "java/insecure-cryptography@v1.0",
-                    "level": "error",
                     "locations": [
                         {
                             "physicalLocation": {
@@ -198,7 +194,6 @@
                 },
                 {
                     "ruleId": "java/insecure-cryptography@v1.0",
-                    "level": "error",
                     "locations": [
                         {
                             "physicalLocation": {
@@ -218,7 +213,6 @@
                 },
                 {
                     "ruleId": "java/insecure-cryptography@v1.0",
-                    "level": "error",
                     "locations": [
                         {
                             "physicalLocation": {
