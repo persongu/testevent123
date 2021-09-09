@@ -29,7 +29,7 @@
                                     "cwe-798",
                                     "java"
                                 ],
-                                "security-severity": 9.2
+                                "security-severity": "9.2"
                             },
                             "defaultConfiguration": {
                                 "level": "error"
