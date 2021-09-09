@@ -20,7 +20,8 @@
                             "help": {
                                 "text": "Misuse of cryptography-related APIs can create security vulnerabilities. This includes one or more of the following: algorithms with known weaknesses, certain padding modes, lack of integrity checks, and insufficiently large key sizes."
                             },
-                            "properties": {
+                            "properties":  
+                                "kind" : "path-problem",
                                 "tags": [
                                     "cryptography",
                                     "security",
