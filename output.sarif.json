@@ -26,10 +26,8 @@
                                     "security",
                                     "digital-signature",
                                     "cwe-327"
-                                ]
-                            },
-                            "defaultConfiguration": {
-                                "level": "error"
+                                ],
+                                "security-severity": 9
                             }
                         },
                         {
