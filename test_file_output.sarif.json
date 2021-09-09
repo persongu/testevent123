@@ -26,8 +26,7 @@
                                     "security",
                                     "digital-signature",
                                     "cwe-327"
-                                ],
-                                "security-severity": 9
+                                ]
                             },
                             "defaultConfiguration": {
                                 "level": "error"
@@ -167,7 +166,7 @@
                                     "uri": "src/main/java/com/mycompany/app/App.java"
                                 },
                                 "region": {
-                                    "startLine": 26,
+                                    "startLine": 23,
                                     "endLine": 26
                                 }
                             }
@@ -187,7 +186,7 @@
                                     "uri": "src/main/java/com/mycompany/app/App.java"
                                 },
                                 "region": {
-                                    "startLine": 20,
+                                    "startLine": 19,
                                     "endLine": 20
                                 }
                             }
@@ -208,7 +207,7 @@
                                 },
                                 "region": {
                                     "startLine": 25,
-                                    "endLine": 25
+                                    "endLine": 26
                                 }
                             }
                         }
@@ -228,7 +227,7 @@
                                 },
                                 "region": {
                                     "startLine": 19,
-                                    "endLine": 19
+                                    "endLine": 20
                                 }
                             }
                         }
