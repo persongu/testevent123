@@ -29,6 +29,13 @@ public class Server2
        if ("1" == "2") {
             //dosomething
        }
+       if ("2" == "3") {
+            //dosomething
+       }
+       if ("3" == "4") {
+            //dosomething
+       }
+
     }
   
     private void cipher(String s) throws Exception
