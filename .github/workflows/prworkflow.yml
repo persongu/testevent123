@@ -29,7 +29,7 @@ jobs:
      with:
        source_path: . # Java source code root
        build_path: buildFiles # build artifact(s) directory
-       s3_bucket: codeguru-reviewer-1f238ff8u  # S3 Bucket with "codeguru-reviewer-*" prefix
+       s3_bucket: codeguru-reviewer-bugtest  # S3 Bucket with "codeguru-reviewer-*" prefix
 
    # Step 3: Upload results into GitHub
    - name: Upload review result
